@@ -87,6 +87,7 @@
             justify-content: center;
             text-align: center;
             height: 200px; /* Adjust based on your content */
+            flex-direction: row; /* Default horizontal layout */
         }
 
         .pricing-divider {
@@ -179,7 +180,21 @@
             .hms-web-dev {
                 font-size: 1.5rem;
             }
-        }
+            .pricing-container {
+                flex-direction: column; /* Stack vertically on small screens */
+                height: auto; /* Adjust height to accommodate stacked items */
+            }
+        
+            .pricing-item {
+                margin: 10px 0; /* Add some vertical margin for spacing */
+            }
+        
+            .pricing-divider {
+                width: 80%; /* Change the divider to horizontal */
+                height: 2px; /* Keep it thin */
+                margin: 20px auto; /* Center horizontally and add margin */
+            }
+                }
     </style>
 </head>
 <body>
@@ -228,17 +243,17 @@
         <h2>Services</h2>
         <p class="mt-4">At HMS Web Developement, I stand for clear, straightforward pricing paired with exceptional service and quality. My mission is to build your online presence on a foundation of trust and excellence, ensuring that every page of your website not only looks fantastic but performs brilliantly too.</p>
         <div class="pricing-container">
-            <div class="pricing-item col-sm">
+            <div class="pricing-item">
                 <h1>$500+</h1>
                 <p>per web project</p>
             </div>
             <div class="pricing-divider"></div>
-            <div class="pricing-item col-sm">
+            <div class="pricing-item">
                 <h1>$60/month</h1>
                 <p>maintenance and hosting services</p>
             </div>
             <div class="pricing-divider"></div>
-            <div class="pricing-item col-sm">
+            <div class="pricing-item">
                 <h1>$50</h1>
                 <p>logo design</p>
             </div>
