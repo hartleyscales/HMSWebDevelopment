@@ -1,0 +1,187 @@
+/* Complete CSS for an Apple-like Aesthetic */
+body, html {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text for readability */
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(50, 50, 50, 0.5) !important; /* Semi-transparent white */
+    backdrop-filter: blur(24px); /* Blur effect for the background content behind the navbar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+    color: #ffffff !important; /* Ensures text is white */
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5); /* Toggler icon border */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+section {
+    border-radius: 15px; /* Rounded corners */
+    padding: 90px 0;
+    margin: 20px 0; /* Space between sections */
+    z-index: 0;
+    position: relative; /* Necessary for the background-image z-index to work */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5; /* Adjust opacity for text readability */
+    z-index: -1; /* Ensure the background is behind content */
+    border-radius: 15px; /* Match the section's border radius */
+}
+
+/* Example Background Images - Replace with your actual paths */
+.about-background { background-image: url('about-background.webp'); }
+.services-background { background-image: url('services-background.webp'); }
+
+.form-control, .btn {
+    border-radius: 0.25rem; /* Slightly rounded corners for form elements and buttons */
+    color: #000; /* Dark text for form elements for contrast */
+}
+
+.btn {
+    background-color: #007bff; /* Bright color for buttons */
+    border: none;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+}
+
+/* Adjusting the contact section to be simpler */
+#contact {
+    background-color: transparent;
+    text-align: center; /* Centering the contact info */
+}
+
+.pricing-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px; /* Adjust based on your content */
+    flex-direction: row; /* Default horizontal layout */
+}
+
+.pricing-divider {
+    width: 2px; /* Making the divider vertical */
+    height: 100%; /* Full height of its container */
+    background-color: #ffffff; /* White color for visibility */
+    margin: 0 20px; /* Space around the divider */
+}
+
+.pricing-item {
+    margin: 0 20px; /* Spacing around the pricing information */
+}
+
+.pricing-item h1 {
+    font-size: 2.5rem; /* Large font size for price */
+}
+
+.pricing-item p {
+    font-size: 1rem; /* Smaller font size for the description */
+}
+
+#greeting {
+    background-image: url('burst-background.webp');
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.greeting-logo {
+    max-width: 10%; /* Adjust based on your logo size and preference */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 3s ease forwards; /* Use the same fadeIn animation */
+    animation-delay: 6.7s; /* Delay to start after the text animations */
+    top: 40px;
+    bottom: 20px;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.slogan {
+    font-size: 10rem;
+    margin-bottom: 20px;
+    margin-top: 45px;
+}
+
+.slogan .part-1, .slogan .part-2 {
+    display: inline-block; /* Treats the span elements as block elements allowing animations */
+    opacity: 0; /* Start invisible */
+}
+
+.slogan .part-1 {
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.slogan .part-2 {
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 3.5s; /* Starts fading in after part-1 */
+}
+
+.hms-web-dev {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+}
+
+#about {
+    padding-top: 250px;
+    padding-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+    }
+    .slogan {
+        font-size: 5.5rem;
+    }
+    .hms-web-dev {
+        font-size: 1.5rem;
+    }
+    .pricing-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        height: auto; /* Adjust height to accommodate stacked items */
+    }
+
+    .pricing-item {
+        margin: 10px 0; /* Add some vertical margin for spacing */
+    }
+
+    .pricing-divider {
+        width: 80%; /* Change the divider to horizontal */
+        height: 2px; /* Keep it thin */
+        margin: 20px auto; /* Center horizontally and add margin */
+    }
+}
