@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS Web Development</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Complete CSS for an Apple-like Aesthetic */
+        body, html {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text for readability */
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(50, 50, 50, 0.5) !important; /* Semi-transparent white */
+            backdrop-filter: blur(24px); /* Blur effect for the background content behind the navbar */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for definition */
+        }
+
+        .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand {
+            color: #ffffff !important; /* Ensures text is white */
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5); /* Toggler icon border */
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        section {
+            border-radius: 15px; /* Rounded corners */
+            padding: 90px 0;
+            margin: 20px 0; /* Space between sections */
+            z-index: 0;
+            position: relative; /* Necessary for the background-image z-index to work */
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Adjust opacity for text readability */
+            z-index: -1; /* Ensure the background is behind content */
+            border-radius: 15px; /* Match the section's border radius */
+        }
+
+        /* Example Background Images - Replace with your actual paths */
+        .about-background { background-image: url('about-background.webp'); }
+        .services-background { background-image: url('services-background.webp'); }
+
+        .form-control, .btn {
+            border-radius: 0.25rem; /* Slightly rounded corners for form elements and buttons */
+            color: #000; /* Dark text for form elements for contrast */
+        }
+
+        .btn {
+            background-color: #007bff; /* Bright color for buttons */
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Slightly darker on hover */
+        }
+
+
+
+        /* Adjusting the contact section to be simpler */
+        #contact {
+            background-color: transparent;
+            text-align: center; /* Centering the contact info */
+        }
+
+        .pricing-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 200px; /* Adjust based on your content */
+            flex-direction: row; /* Default horizontal layout */
+        }
+
+        .pricing-divider {
+            width: 2px; /* Making the divider vertical */
+            height: 100%; /* Full height of its container */
+            background-color: #ffffff; /* White color for visibility */
+            margin: 0 20px; /* Space around the divider */
+        }
+
+        .pricing-item {
+            margin: 0 20px; /* Spacing around the pricing information */
+        }
+
+        .pricing-item h1 {
+            font-size: 2.5rem; /* Large font size for price */
+        }
+
+        .pricing-item p {
+            font-size: 1rem; /* Smaller font size for the description */
+        }
+
+        #greeting {
+            background-image: url('burst-background.webp');
+            background-size: cover;
+            background-position: center;
+            height: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .greeting-logo {
+            max-width: 10%; /* Adjust based on your logo size and preference */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 3s ease forwards; /* Use the same fadeIn animation */
+            animation-delay: 6.7s; /* Delay to start after the text animations */
+            top: 40px;
+            bottom: 20px;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .slogan {
+            font-size: 10rem;
+            margin-bottom: 20px;
+            margin-top: 45px;
+        }
+
+        .slogan .part-1, .slogan .part-2 {
+            display: inline-block; /* Treats the span elements as block elements allowing animations */
+            opacity: 0; /* Start invisible */
+        }
+
+        .slogan .part-1 {
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 1.5s;
+        }
+
+        .slogan .part-2 {
+            animation: fadeIn 2s ease forwards;
+            animation-delay: 3.5s; /* Starts fading in after part-1 */
+        }
+
+
+        .hms-web-dev {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+        }
+
+        #about {
+            padding-top: 250px;
+            padding-bottom: 30px;
+        }
+        @media (max-width: 768px) {
+            section {
+                padding: 40px 15px;
+            }
+            .slogan {
+                font-size: 5.5rem;
+            }
+            .hms-web-dev {
+                font-size: 1.5rem;
+            }
+            .pricing-container {
+                flex-direction: column; /* Stack vertically on small screens */
+                height: auto; /* Adjust height to accommodate stacked items */
+            }
+        
+            .pricing-item {
+                margin: 10px 0; /* Add some vertical margin for spacing */
+            }
+        
+            .pricing-divider {
+                width: 80%; /* Change the divider to horizontal */
+                height: 2px; /* Keep it thin */
+                margin: 20px auto; /* Center horizontally and add margin */
+            }
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8);"> <!-- Adjust the navbar background color to fit the dark theme -->
+        <a class="navbar-brand" href="#" style="display: flex; align-items: center; color: white;">
+            <img src="logo.PNG" alt="HMS Logo" style="height: 40px;">
+            <span style="font-size: 24px; font-weight: bold; margin-left: 10px;">HMS</span> <!-- Sophisticated "HMS" text -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="greeting">
+        <div class="slogan">
+            <span class="part-1">Beyond Pixels,</span>
+            <span class="part-2">Beyond Possible.</span>
+        </div>
+        <div class="hms-web-dev" id="hms-web-dev">&nbsp;</div>
+        <img src="logo.PNG" alt="HMS Logo" class="greeting-logo">
+    </div>
+
+    <section id="about" class="container mt-5">
+        <div class="background-image about-background"></div>
+        <div>
+            <h2>About Me</h2>
+            <p>Hello there! I’m Hartley Scales, the creative mind behind HMS Web Developement, based right here in Chicago. Being 16 might seem young, but in the web development world, it’s my superpower. Why? Because I grew up with the internet as my playground, which means I naturally understand what makes a website truly click with people today.</p>
+
+        <p>At HMS Web Developement, I offer something special: websites that are not just beautiful to look at but are also a breeze to use. I believe in making sites that everyone loves to visit, using my up-to-the-minute knowledge of the latest digital trends. This isn’t just my job; it’s what I love to do, and I bring that enthusiasm to every project I take on.</p>
+
+        <p>Running this agency by myself lets me give every client my full attention. I dive deep into understanding what you need and work with you to make that happen. From the first sketch to the final click, I’m there, making sure your site stands out in the crowded online world.</p>
+
+        <p>Looking for a web developer who gets the digital age like only a digital native can? You’ve found him. At HMS Web Developement, let’s turn your digital dreams into reality. Ready to start? I can’t wait to hear from you.</p>
+        </div>
+    </section>
+
+    <section id="services" class="container mt-5">
+        <div class="background-image services-background"></div>
+        <h2>Services</h2>
+        <p class="mt-4">At HMS Web Developement, I stand for clear, straightforward pricing paired with exceptional service and quality. My mission is to build your online presence on a foundation of trust and excellence, ensuring that every page of your website not only looks fantastic but performs brilliantly too.</p>
+        <div class="pricing-container">
+            <div class="pricing-item">
+                <h1>$500+</h1>
+                <p>per web project</p>
+            </div>
+            <div class="pricing-divider"></div>
+            <div class="pricing-item">
+                <h1>$60/month</h1>
+                <p>maintenance and hosting services</p>
+            </div>
+            <div class="pricing-divider"></div>
+            <div class="pricing-item">
+                <h1>$50</h1>
+                <p>logo design</p>
+            </div>
+        </div>
+        <p>At HMS Web Developement, you get more than just a website. You get a digital home crafted with care and expertise. Here’s what’s on offer:</p>
+        <strong>Base Package - $500:</strong>
+        <p>Our journey starts with a solid foundation—a comprehensive 4-page website tailored specifically to your needs. This package includes:</p>
+        <p>  - A welcoming Home page.
+        <br>  - An About Us page that shares your story and connects with your audience.
+        <br>  - A Services or Products overview page to compellingly showcase what you offer.
+        <br>  - A Contact page, making it easy for your customers to reach out and engage with your business.</p>
+        <p>Each page is crafted with an acute attention to detail, ensuring it embodies your brand and effectively communicates your message. I employ the latest design trends and technologies to make sure your site is not only visually appealing but responsive and user-friendly as well.</p>
+        <strong>Simple Page Additions - $50/Page:</strong>
+        <p>For those who need a bit more room, my simple page additions let you expand your website affordably. Whether it's adding a blog, an FAQ section, or more service pages, I ensure these additions integrate seamlessly with your existing content, maintaining consistency and high quality.</p>
+        <strong>Complex Page Additions - $150/Page:</strong>
+        <p>Some visions require a bit more creativity and innovation. For pages that need advanced functionalities—like e-commerce capabilities, custom forms, or membership portals—I offer complex page additions. These are designed to enhance your visitors' user experience, incorporating bespoke solutions and sophisticated designs to meet your specific requirements.</p>
+        <strong>Maintenance Services - $60/Month:</strong>
+        <p>With my comprehensive maintenance services, you can ensure your website always runs smoothly. This monthly package covers regular updates, security checks, and performance optimizations, so your website remains in top condition. Consider it a worry-free solution to keeping your site updated and secure.</p>
+        <strong>Logo Design - $50:</strong>
+        <p>A great logo stands at the cornerstone of your brand identity. With my logo design service, I'll create a custom, memorable logo that perfectly captures the essence of your brand and leaves a lasting impression on your audience.</p>
+        <h3>Quality You Can Count On</h3>
+        <p>With every project, I pledge to deliver:</p>
+        <p><strong>  - Superior Design:</strong> Your website will stand out with a clean, professional appearance that perfectly represents your brand.</p>
+        <p><strong>  - Responsive Functionality:</strong> I ensure your site looks amazing and functions smoothly across all devices and browsers.</p>
+        <p><strong>  - SEO Optimization:</strong> I lay the groundwork for your site to be more visible and rank higher in search engine results.</p>
+        <p>At HMS Web Development, your satisfaction is my top priority. I'm committed to transparency in my pricing and excellence in my work. Let's build something remarkable together!</p>
+    </section>
+
+    <section id="contact" class="container mt-5 pt-5">
+        <h2>Contact Me</h2>
+        <p>I'm always looking for new challenges and opportunities to innovate. If you're interested in working together or just want to say hi, don't hesitate to reach out.</p>
+        <p>Email: hartleyscales@gmail.com</p>
+        <p>Phone: (224)-714-9691</p>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const target = document.getElementById('hms-web-dev');
+            const text = 'HMS Web Development';
+            let index = 0;
+
+            function typeEffect() {
+                if (index < text.length) {
+                    target.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 65); // Adjust typing speed
+                }
+            }
+
+            // Optionally delay the typing start
+            setTimeout(typeEffect, 5500); // Adjust delay as needed
+        });
+    </script>
+</body>
+</html>
