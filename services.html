@@ -6,6 +6,48 @@
     <title>HMS Web Development - Services</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .service-section {
+            position: relative;
+            margin-bottom: 100px; /* Adjust margin for spacing */
+            max-width: 60%; /* Make the sections smaller horizontally */
+            margin-left: 0;
+            margin-right: auto;
+        }
+        .service-box {
+            background-color: #3c3c3c; /* Solid darker gray box */
+            border-radius: 15px;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .service-image {
+            position: absolute;
+            top: -30px; /* Position image slightly above the top of the grey box */
+            right: -300px; /* Move the image further to the right */
+            width: 375px; /* Adjust the size of the images to be 1.5 times bigger */
+            height: 375px; /* Make the images square */
+            z-index: 0;
+            border-radius: 15px;
+        }
+        .main-title {
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .main-title-underline {
+            border-bottom: 3px solid #ffffff; /* White underline for the main title and subheading */
+            padding-bottom: 5px;
+            display: inline-block;
+            width: 60%;
+            margin-top: -10px;
+        }
+        .service-section:nth-child(2) {
+            margin-bottom: 50px; /* Decrease space between the first and second sections */
+        }
+        .service-section:nth-child(3) {
+            margin-bottom: 150px; /* Increase space between the second and third sections */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8);">
@@ -26,42 +68,38 @@
     </nav>
 
     <section id="services" class="container mt-5 pt-5">
-        <div class="background-image services-background"></div>
         <div class="text-center mb-5">
-            <h1 class="display-4">Our Services</h1>
-            <p class="lead">Quality solutions crafted with precision and care.</p>
+            <h1 class="display-4 main-title">My Services</h1>
+            <div class="main-title-underline">
+                <p class="lead">Quality solutions crafted with precision and care.</p>
+            </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <img src="placeholder.jpg" class="card-img-top" alt="Web Development">
-                    <div class="card-body">
-                        <h3 class="card-title">Web Development</h3>
-                        <h4>$500+</h4>
-                        <p class="card-text">Custom websites tailored to your needs. A welcoming Home page, About Us page, Services overview, and Contact page.</p>
-                    </div>
-                </div>
+        <div class="service-section">
+            <img src="blue.png" class="service-image" alt="Web Development">
+            <div class="service-box">
+                <h3>Web Development</h3>
+                <h4>$500+</h4>
+                <p>Custom websites tailored to your needs. My web development package includes a welcoming Home page, an engaging About Us page that shares your story and connects with your audience, a comprehensive Services overview page to showcase what you offer, and a user-friendly Contact page. I ensure every page is crafted with attention to detail, using the latest design trends and technologies to make your site visually appealing and responsive.</p>
+                <p>The base package starts at $500, which includes a 4-page website. Additional simple pages are $50 each, while complex pages with advanced functionalities are $150 each.</p>
             </div>
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <img src="placeholder.jpg" class="card-img-top" alt="Logo Design">
-                    <div class="card-body">
-                        <h3 class="card-title">Logo Design</h3>
-                        <h4>$50</h4>
-                        <p class="card-text">Create a memorable logo that perfectly captures the essence of your brand and leaves a lasting impression.</p>
-                    </div>
-                </div>
+        </div>
+
+        <div class="service-section">
+            <img src="blue.png" class="service-image" alt="Logo Design">
+            <div class="service-box">
+                <h3>Logo Design</h3>
+                <h4>$90</h4> <!-- Updated price -->
+                <p>Create a memorable logo that perfectly captures the essence of your brand. My logo design service focuses on creating a unique and professional logo that stands out and leaves a lasting impression on your audience. Whether you need a new logo for a startup or a redesign for an established brand, I work closely with you to ensure the final product aligns with your vision and brand identity.</p>
             </div>
-            <div class="col-md-4 text-center mb-4">
-                <div class="card h-100">
-                    <img src="placeholder.jpg" class="card-img-top" alt="Maintenance Services">
-                    <div class="card-body">
-                        <h3 class="card-title">Maintenance Services</h3>
-                        <h4>$60/month</h4>
-                        <p class="card-text">Ensure your website always runs smoothly with regular updates, security checks, and performance optimizations.</p>
-                    </div>
-                </div>
+        </div>
+
+        <div class="service-section">
+            <img src="blue.png" class="service-image" alt="Maintenance Services">
+            <div class="service-box">
+                <h3>Maintenance Services</h3>
+                <h4>$40/month</h4> <!-- Updated price -->
+                <p>Ensure your website always runs smoothly with my comprehensive maintenance services. This monthly package covers regular updates, security checks, and performance optimizations. I handle all the technical aspects to keep your site secure and up-to-date, allowing you to focus on your business without worrying about website issues. Consider it a worry-free solution to maintaining a high-performing website.</p>
             </div>
         </div>
     </section>
