@@ -9,10 +9,13 @@
     <style>
         .service-section {
             position: relative;
-            margin-bottom: 100px; /* Adjust margin for spacing */
+            margin-bottom: 100px; /* Decrease space between sections */
             max-width: 60%; /* Make the sections smaller horizontally */
             margin-left: 0;
             margin-right: auto;
+        }
+        .service-section:first-of-type {
+            margin-top: 100px; /* Increase space above the first section */
         }
         .service-box {
             background-color: #3c3c3c; /* Solid darker gray box */
@@ -24,7 +27,7 @@
         .service-image {
             position: absolute;
             top: -30px; /* Position image slightly above the top of the grey box */
-            right: -300px; /* Move the image further to the right */
+            right: -350px; /* Reduce the overlap further */
             width: 375px; /* Adjust the size of the images to be 1.5 times bigger */
             height: 375px; /* Make the images square */
             z-index: 0;
@@ -32,7 +35,7 @@
         }
         .main-title {
             padding-bottom: 5px;
-            margin-bottom: 10px;
+            margin-bottom: 20px; /* Add more space below the title */
         }
         .main-title-underline {
             border-bottom: 3px solid #ffffff; /* White underline for the main title and subheading */
@@ -41,11 +44,20 @@
             width: 60%;
             margin-top: -10px;
         }
-        .service-section:nth-child(2) {
-            margin-bottom: 50px; /* Decrease space between the first and second sections */
-        }
-        .service-section:nth-child(3) {
-            margin-bottom: 150px; /* Increase space between the second and third sections */
+        @media (max-width: 768px) {
+            .service-image {
+                position: static;
+                display: block;
+                margin: 0 auto 20px; /* Center the image above the grey box on small screens */
+                margin-top: 60px;
+                width: 100%; /* Make the image full width on small screens */
+                height: auto; /* Maintain aspect ratio */
+            }
+            .service-section {
+                max-width: 100%; /* Make the sections take full width on small screens */
+                margin: 20px auto; /* Ensure proper spacing between sections */
+            }
+            
         }
     </style>
 </head>
@@ -60,9 +72,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html#about">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -75,8 +87,8 @@
             </div>
         </div>
 
-        <div class="service-section">
-            <img src="blue.png" class="service-image" alt="Web Development">
+        <div class="service-section" style="margin-top: 100px;">
+            <img src="Services1.WEBP" class="service-image" alt="Web Development">
             <div class="service-box">
                 <h3>Web Development</h3>
                 <h4>$500+</h4>
@@ -86,22 +98,30 @@
         </div>
 
         <div class="service-section">
-            <img src="blue.png" class="service-image" alt="Logo Design">
+            <img src="Services2.WEBP" class="service-image" alt="Logo Design">
             <div class="service-box">
                 <h3>Logo Design</h3>
                 <h4>$90</h4> <!-- Updated price -->
-                <p>Create a memorable logo that perfectly captures the essence of your brand. My logo design service focuses on creating a unique and professional logo that stands out and leaves a lasting impression on your audience. Whether you need a new logo for a startup or a redesign for an established brand, I work closely with you to ensure the final product aligns with your vision and brand identity.</p>
+                <p>Create a memorable logo that perfectly captures the essence of your brand. My logo design service focuses on creating a unique and professional logo that stands out and leaves a lasting impression on your audience. Whether you need a new logo for a startup or a redesign for an established brand, I work closely with you to ensure the final product aligns with your vision and brand identity. I use modern design tools and techniques to create logos that are not only visually appealing but also versatile for various applications, including digital media, print, and merchandise.</p>
+                <p>Each logo design package includes multiple initial concepts, revisions based on your feedback, and the final logo in various formats suitable for different uses. I also provide a brand style guide that outlines the proper use of your new logo to maintain consistency across all your branding materials.</p>
             </div>
         </div>
 
         <div class="service-section">
-            <img src="blue.png" class="service-image" alt="Maintenance Services">
+            <img src="Services3.WEBP" class="service-image" alt="Maintenance Services">
             <div class="service-box">
                 <h3>Maintenance Services</h3>
                 <h4>$40/month</h4> <!-- Updated price -->
                 <p>Ensure your website always runs smoothly with my comprehensive maintenance services. This monthly package covers regular updates, security checks, and performance optimizations. I handle all the technical aspects to keep your site secure and up-to-date, allowing you to focus on your business without worrying about website issues. Consider it a worry-free solution to maintaining a high-performing website.</p>
+                <p>In addition to technical maintenance, I also offer content updates to keep your website fresh and relevant. This includes updating text, images, and other content as needed. Regular performance reviews are conducted to identify areas for improvement and to ensure that your website continues to deliver an excellent user experience. With my maintenance services, you can be confident that your website is in good hands and will continue to support your business goals effectively.</p>
             </div>
         </div>
+    </section>
+    <section id="contact" class="container mt-5 pt-5" style="margin-bottom: 50px">
+        <h2>Contact Me</h2>
+        <p>I'm always looking for new challenges and opportunities to innovate. If you're interested in working together or just want to say hi, don't hesitate to reach out.</p>
+        <p>Email: hartleyscales@gmail.com</p>
+        <p>Phone: (224)-714-9691</p>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
