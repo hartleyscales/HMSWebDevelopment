@@ -6,6 +6,106 @@
     <title>HMS Web Development</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
+    <style>
+        .cta-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .cta-section h2 {
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            color: #343a40;
+        }
+        .cta-btn {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.25rem;
+            color: #ffffff;
+            background-color: #3c3c3c;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+        .cta-btn:hover {
+            background-color: #2c2c2c;
+        }
+        .card-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 50px 0;
+        }
+        .card {
+            width: 300px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-body {
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .card-body h5 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #343a40;
+        }
+        .card-body p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #6c757d;
+        }
+        .card-body a {
+            color: #ffffff;
+            background-color: #3c3c3c;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .card-body a:hover {
+            background-color: #2c2c2c;
+        }
+        .main-title {
+            font-size: 3rem; /* Adjust font size for a larger title */
+            color: #ffffff; /* Dark color for the title */
+            margin-bottom: 20px;
+        }
+
+        .main-title-underline {
+            width: 60px; /* Adjust width of the underline */
+            height: 4px; /* Adjust height of the underline */
+            background-color: #ffffff; /* Color of the underline */
+            margin: 10px auto; /* Center the underline */
+        }
+
+        .lead {
+            font-size: 1.25rem; /* Adjust font size for the subheading */
+            color: #ffffff; /* Lighter color for the subheading */
+        }
+        .contact-btn {
+            margin-top: 20px; /* Add some space above the button */
+            padding: 15px 30px; /* Adjust padding for the button */
+            font-size: 1.25rem; /* Adjust font size for the button */
+            color: #ffffff; /* White text color */
+            background-color: #3c3c3c; /* Dark background color */
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .contact-btn:hover {
+            background-color: #2c2c2c; /* Darker background color on hover */
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(0, 0, 0, 0.8);">
@@ -47,13 +147,43 @@
         <p>Looking for a web developer who gets the digital age like only a digital native can? You’ve found him. At HMS Web Developement, let’s turn your digital dreams into reality. Ready to start? I can’t wait to hear from you.</p>
         </div>
     </section>
-
-    <section id="contact" class="container mt-5 pt-5" style="margin-bottom: 50px">
-        <h2>Contact Me</h2>
-        <p>I'm always looking for new challenges and opportunities to innovate. If you're interested in working together or just want to say hi, don't hesitate to reach out.</p>
-        <p>Email: hartleyscales@gmail.com</p>
-        <p>Phone: (224)-714-9691</p>
+    <div class="text-center mb-5">
+        <h1 class="display-4 main-title">My Services</h1>
+        <div class="main-title-underline"></div>
+        <p class="lead">Explore the range of services I offer to help your business thrive.</p>
+    </div>
+    <section class="card-section">
+        <div class="card">
+            <img src="Services1.WEBP" alt="Service 1">
+            <div class="card-body">
+                <h5>Web Development</h5>
+                <p>Custom websites tailored to your needs.</p>
+                <a href="services.html" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Services2.WEBP" alt="Service 2">
+            <div class="card-body">
+                <h5>Logo Design</h5>
+                <p>Create a memorable logo that captures your brand's essence.</p>
+                <a href="services.html" class="cta-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="Services3.WEBP" alt="Service 3">
+            <div class="card-body">
+                <h5>Maintenance Services</h5>
+                <p>Keep your website running smoothly with my maintenance services.</p>
+                <a href="services.html" class="cta-btn">Learn More</a>
+            </div>
+        </div>
     </section>
+    <div class="text-center mb-5">
+        <h1 class="display-4 main-title">Contact Me</h1>
+        <div class="main-title-underline"></div>
+        <p class="lead">Let's get in touch and discuss your project.</p>
+        <a href="contact.html" class="btn btn-primary contact-btn">Get in Touch</a>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
